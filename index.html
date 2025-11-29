@@ -806,7 +806,7 @@ function playMusic() {
     music.play().catch(() => {});
 }
 
-// AUTOPLAY SETELAH USER MASUK WEB
+// AUTOPLAY SETELAH USER SENTUH PAGE
 function firstTouch() {
     playMusic();
     window.removeEventListener("click", firstTouch);
@@ -830,4 +830,5 @@ music.addEventListener("ended", () => {
 </footer>
 
 </html> 
+
 
