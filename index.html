@@ -793,7 +793,7 @@ img:hover {
 const music = document.getElementById("bgMusic");
 
 const playlist = [
-    "about you"
+    "about you.mp3"
     "line without a hook.mp3",
     "hapus aku.mp3",
     "december.mp3"
@@ -806,7 +806,7 @@ function playMusic() {
     music.play().catch(() => {});
 }
 
-// AUTOPLAY SETELAH USER SENTUH PAGE
+// AUTOPLAY SETELAH USER MASUK WEB
 function firstTouch() {
     playMusic();
     window.removeEventListener("click", firstTouch);
@@ -830,3 +830,4 @@ music.addEventListener("ended", () => {
 </footer>
 
 </html> 
+
