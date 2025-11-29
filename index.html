@@ -793,13 +793,14 @@ img:hover {
 const music = document.getElementById("bgMusic");
 
 const playlist = [
-    "about you.mp3"
+    "about you.mp3",
     "line without a hook.mp3",
     "hapus aku.mp3",
     "december.mp3"
 ];
 
-let index = 0;
+// Pilih lagu random pertama
+let index = Math.floor(Math.random() * playlist.length);
 
 function playMusic() {
     music.src = playlist[index];
@@ -815,9 +816,14 @@ function firstTouch() {
 window.addEventListener("click", firstTouch);
 window.addEventListener("touchstart", firstTouch);
 
-// Lanjut ke lagu berikutnya
+// Saat lagu selesai → pilih lagu acak lain
 music.addEventListener("ended", () => {
-    index = (index + 1) % playlist.length;
+    let next;
+    do {
+        next = Math.floor(Math.random() * playlist.length);
+    } while (next === index); // agar tidak memutar lagu yang sama
+
+    index = next;
     playMusic();
 });
 </script>
@@ -830,5 +836,3 @@ music.addEventListener("ended", () => {
 </footer>
 
 </html> 
-
-
